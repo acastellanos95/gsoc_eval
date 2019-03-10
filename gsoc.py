@@ -31,12 +31,12 @@ def openHdf(filename):
                 typ = node.dtype
             except:
                 typ = ""
-            info.append([name,size,shape,typ])
+            info.append([name,"Dataset",size,shape,typ])
         else:
             size = ""
             shape = ""
-            typ = "Group"
-            info.append([name,size,shape,typ])
+            typ = ""
+            info.append([name,"Group",size,shape,typ])
     f.visititems(visitor_func)
     return info
 
@@ -68,8 +68,6 @@ def tsk3(filename):
     plt.savefig("streakImageData.png")
     plt.show()
     
-
-
 file = "1541962108935000000_167_838.h5"
 
 convertUnixNano(file)
